@@ -1,0 +1,251 @@
+tr <- train( training[58:69] , method="glm")
+?train
+tr <- train( training[58:69], diagnosis , method="glm")
+tr <- train( training[58:69], training$diagnosis , method="glm")
+tr
+preProc <- preProcess(training[58:69], method="pca", thresh=0.8)
+tr2 <- train( training[58:69], training$diagnosis , preProcess, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess=preProcess, method="glm")
+tr2 <- train( preProcess, training$diagnosis, method="glm")
+warnings()
+tr2
+tr2 <- train( preProcess, training$diagnosis, method="glm")
+preProc <- preProcess(training[58:69], method="pca", thresh=0.8)
+tr2 <- train( preProc, training$diagnosis, method="glm")
+preProc
+tr2 <- train( preProc, training$diagnosis, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", method="glm")
+tr2
+tr2 <- train( training[58:69], training$diagnosis , preProcess=preProc, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", thresh=0.8,method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", method="glm")
+tr2
+library(AppliedPredictiveModeling)
+data(segmentationOriginal)
+library(caret)
+data
+segmentationOriginal
+segmentationOriginal['Case']
+train <- segmentationOriginal[segmentationOriginal['Case'],]
+train <- segmentationOriginal[segmentationOriginal['Case']=='Train',]
+test <- segmentationOriginal[segmentationOriginal['Case']=='Test',]
+train
+set.seed(125)
+fit <- train(segmentationOriginal ~ ., data = training, method = "rpart")
+fit <- train(segmentationOriginal ~ ., data = train, method = "rpart")
+fit <- train(segmentationOriginal, data = train, method = "rpart")
+segmentationOriginal
+segmentationOriginal[1]
+segmentationOriginal[,1]
+segmentationOriginal[1,]
+fit <- train(Predictor ~ ., data = train, method = "rpart")
+fit <- train(data = train, method = "rpart")
+fit <- train(. , data = train, method = "rpart")
+fit <- train( ~ . , data = train, method = "rpart")
+fit <- train( Var ~ . , data = train, method = "rpart")
+?train
+fit <- train( 1:3 , data = train, method = "rpart")
+fit <- train( Cell ~ . , data = train, method = "rpart")
+summary(fit)
+summary(fit$finalModel)
+predict(fit, test)
+segmentationOriginal[1,]
+fit <- train( Class ~ . , data = train, method = "rpart")
+predict(fit, test)
+test
+v1['TotalIntench2'] <- 23
+v1 <- {}
+v1['TotalIntench2'] <- 23
+v1
+v1['FiberWidthCh1'] <- 10
+v1['PerimStatusCh1'] <- 2
+v2['TotalIntench2'] <- 50
+v2 <- {}
+v3 <- {}
+v4 <- {}
+v2['TotalIntench2'] <- 50
+v3['TotalIntench2'] <- 57
+v2['FiberWidthCh1'] <- 10
+v3['FiberWidthCh1'] <- 8
+v4['FiberWidthCh1'] <- 8
+v2['VarIntenCh4'] <- 100
+v3['VarIntenCh4'] <- 100
+v4['VarIntenCh4'] <- 100
+v4['PerimStatusCh1'] <- 2
+v
+v1
+v2
+v3
+v4
+predict(fit, v1)
+v1['Cell'] = 1
+v2['Cell'] = 2
+v3['Cell'] = 3
+v4['Cell'] = 4
+predict(fit, v1)
+v1
+v2
+v3
+v4
+test
+predict(fit, v1)
+data.frame
+data.frame(v1)
+data.frame(v1')
+predict(fit, v1)
+predict(fit, test)
+test['TotalIntench2']
+v1
+v1.
+predict(fit, v1)
+predict(fit, v1.)
+predict(fit, v1)
+?predict
+test <- {'Cell': 1}
+test
+ttt <- {'Cell': 1}
+ttt
+ttt <- {'Cell': '1'}
+test
+predict(fit, {'Cell': 1})
+predict(fit, test)
+test['TotalIntench2'==23]
+library(AppliedPredictiveModeling)
+data(segmentationOriginal)
+library(caret)
+training = segmentationOriginal[ segmentationOriginal['Case']=='Training',]
+testing = segmentationOriginal[ segmentationOriginal['Case']=='Testing',]
+training
+testing
+testing = segmentationOriginal[ segmentationOriginal['Case']=='Testing', ]
+testing
+testing[1]
+testing[2]
+testingsegment
+segmentationOriginal
+testing = segmentationOriginal[ segmentationOriginal['Case']=='Testing' ]
+segmentationOriginal[0]
+segmentationOriginal[0,]
+segmentationOriginal[1]
+segmentationOriginal[1]
+segmentationOriginal[,1]
+segmentationOriginal[1,]
+testing = segmentationOriginal[ segmentationOriginal['Case']=='Test', ]
+training = segmentationOriginal[ segmentationOriginal['Case']=='Train',]
+training
+fit <- train(Case ~ ., data=training, method='rpart')
+fit <- train(Case ~ ., data=training, method='rpart')
+fit <- train( Class ~ . , data = train, method = "rpart")
+fit <- train( Class ~ . , data = training, method = "rpart")
+v1
+v1 <- list()
+v1['TotalIntench2'] = 23;
+v1['TotalIntench2'] <- 23;
+v1['FiberWidthCh1'] <- 10;
+v1['PerimStatusCh1'] <- 2;
+v1
+rbind(v1)
+v1['Cell'] <- 1;
+rbind(v1)
+predict(fit)
+predict(fit, v1)
+v1['Case'] <- 'Train';
+predict(fit, rbind(v1))
+predict(fit, v1)
+set.seed(125)
+predict(fit, v1)
+predict(fit, rbind(v1))
+predict(fit, v1)
+library(rattle)
+library(rattle)
+fancyRpartPlot(fit$finalModel)
+library(pgmm)
+library(pgmm)
+data(olive)
+load("/Users/olafjanssen/Downloads/pgmm/data/olive.rda")
+oliv
+olive
+olive = olive[,-1]
+olive
+newdata = as.data.frame(t(colMeans(olive)))
+newdata
+fit <- train(Area ~ ., data = olive, method = "rpart")
+fit$finalModel
+predict(fit, newdata)
+fancyRpartPlot(fit$finalModel)
+library(ElemStatLearn)
+library(ElemStatLearn)
+library(ElemStatLearn)
+data($Aheart)
+data(SAheart)
+set.seed(8484)
+train = sample(1:dim(SAheart)[1], size=dim(SAheart)[1]/2, replace=F)
+transSA = SAheart[train,]
+testSA = SAheart[-train,]
+set.seed(13234)
+fit <- train( chd)
+trainSA = SAheart[train,]
+trainSA
+trainSA[0]
+trainSA[1]
+trainSA[,1]
+trainSA[,0]
+trainSA[,1]
+trainSA[1,]
+fit <- train( chd ~ [age, alcohol, obesity, tobacco, typa, ldl], data = trainSA, method = "glm", family = "binomial")
+?fit
+?train
+?train
+fit <- train( chd ~ age + alcohol + obesity + tobacco + typa + ldl, data = trainSA, method = "glm", family = "binomial")
+fit <- train( chd ~ age + alcohol + obesity + tobacco + typea + ldl, data = trainSA, method = "glm", family = "binomial")
+missClass = function(values,prediction){sum(((prediction > 0.5)*1) != values)/length(values)}
+missClass(trainSA, predict(fit, trainSA))
+missClass(trainSA['chd'], predict(fit, trainSA))
+predict(fit, trainSA)
+trainSA['chd']
+missClass(trainSA['chd'], predict(fit, trainSA))
+missClass(testSA['chd'], predict(fit, testSA))
+trainSA.length
+dim(trainSA)
+dim(testSA)
+train
+trainSA = SAheart[train,]
+testSA = SAheart[-train,]
+dim(trainSA)
+dim(testSA)
+63/231
+72/231
+library(ElemStatLearn)
+data(vowel.train)
+data(vowel.test)
+vowel
+vowel.train
+set.seed(33833)
+fit <- train(y ~ ., data = vowel.train, method = "rf")
+varImp
+?varImp
+varImp(fit$finalModel)
+?varImp
+varImp(fit)
+fit
+fit <- train(y ~ ., data = vowel.train, method = "rf", prox=TRUE)
+varImp(fit)
+varImp(fit, conditional=FALSE)
+fit <- train(y ~ ., data = vowel.train, method = "rf", importance=T)
+varImp(fit, conditional=FALSE)
+read.csv
+read.csv("../pml-training.csv")
+training = read.csv("../pml-training.csv")#
+testing = read.csv("../pml-testing.csv")
+training[0,]
+training[1,]
+training[1,]
+training[0,]
+training['classe',]
+training[,'classe']
+training[0,]
+training[,'X']
+training[0,]
+training[,'user_name']
+training[0,]
+fit <- train(classe ~ ., data = training, method = "rf", importance = T)
