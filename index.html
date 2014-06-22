@@ -21,8 +21,45 @@
 	<p>We can then apply our model first to the testing set and validate that our model is indeed accurate. Then, finally, we unleash the model on a specific data set (called testing set on the server) of which we do not know the classe parameter and produce a prediction. The predicted values are then submitted into the autograder interface of the MOOC.
 
 	<h2>Results</h2>
+		<p>After training the training set with the random forest model we obtain the following summary:</p>
+	<pre>
+Random Forest 
 
-	<h2>Conclusions</h2>
+13735 samples
+   59 predictors
+    5 classes: 'A', 'B', 'C', 'D', 'E' 
+
+No pre-processing
+Resampling: Bootstrapped (25 reps) 
+
+Summary of sample sizes: 13735, 13735, 13735, 13735, 13735, 13735, ... 
+
+Resampling results across tuning parameters:
+
+  mtry  Accuracy  Kappa  Accuracy SD  Kappa SD
+  2     0.985     0.98   0.00174      0.0022  
+  36    0.995     0.993  0.000922     0.00116 
+  71    0.991     0.988  0.002        0.00253 
+
+Accuracy was used to select the optimal model using  the largest value.
+The final value used for the model was mtry = 36. 	
+	</pre>
+
+<p>The best out-of-bag error is then estimated to be 0.995! By applying the resulting model on the testing data set, we find that we get a perfect 'score' and there are no wrong predictions:</p>
+
+	<pre>
+conf. matrix   A    B    C    D    E
+          A 1674    0    0    0    0
+          B    0 1139    0    0    0
+          C    0    0 1026    0    0
+          D    0    0    0  964    0
+          E    0    0    0    0 1082
+	</pre>
+
+	<p>We are therefore very confident that the accuracy reported above is a fair estimate. Indeed, when the model is applied to the external testing set used for grading, a perfect score was obtained.</p>
+
+	<h2>Discussion</h2>
+	In conclusion, we obtained perfect predictions in both graded data and partitioned testing data, using the random forest model. Internally performed cross-validation predicts a very high out-of-sample accuracy of 0.995, which seems to agree with the predictions. We found that running the model is extremly slow. It took a MacBook Pro more than 4 hours to obtain the model which made the assignment quite tedious to perform. In addition, sadly, the resulting lack of time also results in a report without any interesting figures. This is also partly due to the fact that the random forest method is not easy to interpret and there did not seem to be 2 or 3 main predictor monitors that would reasonably visualize the classification.
 
 	<h2>Bibliography</h2>
 	Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013.

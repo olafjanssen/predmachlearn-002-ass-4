@@ -26,5 +26,10 @@ measurements <- measurements[, predictables]
 # train using random forest training
 rfFit <- train(classe ~ . - X - user_name - raw_timestamp_part_1 - raw_timestamp_part_2 - new_window - num_window, data = training, method = "rf", importance = T, PROX=TRUE)
 
-# prediction
+# predict the class using the testing data set
+testPredict <- predict(rfFit, testing)
+testing$predRight <- testPredict == testing$classe
+table(testPredict, testing$classe)
+
+# prediction of the measurement data which will be graded separately
 answers <- predict(rfFit, measurements)
