@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Practical Machine Learning: Prediction Assignment</title>
+	</head>
+
+	<body>
+	<h1>Practical Machine Learning: Prediction Assignment</h1>
+	<p>author: Olaf Janssen, <a href="o.t.a.janssen@gmail.com">o.t.a.janssen@gmail.com</a></p>
+
+	<h2>Introduction</h2>
+	<p>This short report is the resulting work for the peer graded prediction assignment as part of the Practical Machine Learning MOOC on Coursera.org. The assigment calls on analysing an existing data set (Velloso, 2013). The data set contains a large range of measurements taken while participants performed weight lifting excercises. The quality of the performed exercise is stored in a 'classe' parameter and ranges from A to E where A is proper execution and the others are various types of incorrect performances.</p>
+
+	<p>In this report, we build a model to predict the classe parameter based on the measurement data, and use cross-validation to estimate the expected out-of-sample error.</p>
+
+	<h2>Methodology</h2>
+	<p>The analysis is perfomed using R, assisted by the Caret package. First, the dataset is partitioned into a training set (p=0.7) and a testing set. Then we clean the dataset for columns that contain no data. The data is then trained using the random forest method. We choose this method for its generally high accuracy, at the cost of being slow to compute. The Caret train method for random forest uses bootstrapping resampling as a measure of accuracy, so that external cross-validation is not needed.</p>
+
+	<p>We can then apply our model first to the testing set and validate that our model is indeed accurate. Then, finally, we unleash the model on a specific data set (called testing set on the server) of which we do not know the classe parameter and produce a prediction. The predicted values are then submitted into the autograder interface of the MOOC.
+
+	<h2>Results</h2>
+
+	<h2>Conclusions</h2>
+
+	<h2>Bibliography</h2>
+	Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013.
+	</body>
+</html>
